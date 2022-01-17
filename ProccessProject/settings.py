@@ -79,16 +79,16 @@ WSGI_APPLICATION = 'ProccessProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# mysqlを指定
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':  'user_table',
-        'USER': 'root',
-        'PASSWORD': 'kcsf',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'djangogirls',
+        'USER': 'name',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
-
 # 追記(Heroku用)
 import dj_database_url
 db_from_env = dj_database_url.config()
