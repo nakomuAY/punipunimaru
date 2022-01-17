@@ -1,0 +1,64 @@
+﻿{% extends "base.html" %}
+　　{% block title %}
+    会社登録確認画面
+    {% endblock %}
+
+{% load static %}
+
+     {% block link %}
+     <link rel="stylesheet" href="{%static 'css/calender/add_ck.css' %}">
+     {% endblock %}
+
+{% block content %}
+    <div id="dialog">
+        <h1 class="check">登録確認画面</h1>
+        <form method="post" action="{% url 'calender' %}" name="db_input" id="db_input" >
+        {%csrf_token%}
+        <table id="input_data">
+            <tr>
+                <td>会社名</td>
+                <td>:</td>
+                <td><input type="text" value="{{ input_con_name }}" readonly name="input_con_name"></td>
+            </tr>
+            <tr>
+                <td>面接日</td>
+                <td>:</td>
+                <td><input type="text" value="{{ input_con_day }}" readonly name="input_con_day"></td>
+            </tr>
+            <tr>
+                <td>面接時間</td>
+                <td>:</td>
+                <td><input type="text" value="{{ input_con_time }}" readonly name="input_con_time"></td>
+            </tr>
+            <tr>
+                <td>場所</td>
+                <td>:</td>
+                <td><input type="text" value="{{ input_con_place }}" readonly name="input_con_place"></td>
+            </tr>
+            <tr>
+                <td>電話番号</td>
+                <td>:</td>
+                <td><input type="text" value="{{ input_con_tel }}" readonly name="input_con_tel"></td>
+            </tr>
+            <tr>
+                <td>メールアドレス</td>
+                <td>:</td>
+                <td><input type="text" value="{{ input_con_email }}" readonly name="input_con_email"></td>
+            </tr>
+            <tr>
+                <td>備考</td>
+                <td>:</td>
+                <td><input type="text" value="{{ input_con_memo }}" readonly name="input_con_memo"></td>
+            </tr>
+            <tr>
+                <td>表示色</td>
+                <td>:</td>
+                <td ><input type="hidden" value="{{ input_con_color }}" list id="color" name="input_con_color"></td>
+            </tr>
+        </table>
+        <p>上記の内容で面接予定を登録します。<br>よろしいですか？</p>
+        <button type="submit" name="input_ok" class="ok" >OK</button>
+        </form>
+    </div>
+
+{% endblock %}}

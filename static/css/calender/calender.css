@@ -1,0 +1,587 @@
+
+.wrapper {
+    margin: 15px auto;
+    max-width: 700px;
+}
+
+.container-calender {
+    background: #ffffff;
+    width: 100%;
+    margin: 0 auto;
+    overflow: auto;
+    margin-top: 70px;
+}
+
+.button-container-calender button {
+    cursor: pointer;
+    display: inline-block;
+    zoom: 1;
+    background: #00a2b7;
+    color: #fff;
+    border: 1px solid #0aa2b5;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 0px 10px;
+}
+
+.table-calender {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    .table-calender th,
+    .table-calender td {
+        padding: 10px;
+        border: 1px solid #e2e2e2;
+        text-align: center;
+        vertical-align: top;
+    }
+
+.date-picker.selected {
+    font-weight: bold;
+    color: #fff;
+    background: #f75050;
+}
+
+    .date-picker.selected span {
+        border-bottom: 2px solid currentColor;
+    }
+
+.date-picker.clicked {
+        font-weight: bold;
+        color: #fff;
+        background: #77efff;
+    }
+    
+    .date-picker.clicked span {
+        border-bottom: 2px solid currentColor;
+    }
+
+/* 日曜 */
+.date-picker:nth-child(1) {
+    color: red;
+}
+/* 土曜 */
+.date-picker:nth-child(7) {
+    color: blue;
+}
+
+#monthAndYear {
+    text-align: center;
+    margin-top: 0;
+}
+
+.button-container-calender {
+    position: relative;
+    margin-bottom: 1em;
+    overflow: hidden;
+    clear: both;
+}
+
+#previous {
+    float: left;
+}
+
+#next {
+    float: right;
+}
+
+
+.footer-container-calender {
+    margin-top: 1em;
+    border-top: 1px solid #dadada;
+    padding: 10px 0;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+#detailField {
+    position: relative;
+    width: 90%;
+    height: 35%;
+    margin-top:2%;
+    margin-left:5%;
+    border:solid 3px black;
+    visibility :hidden;
+
+}
+
+#input_dialog{
+    margin-top : -33%;
+    margin-left : 35%;
+    width :500px;
+    height:650px;
+    border:solid 1px black;
+}
+
+    #input_dialog button{
+        margin-top:95%;
+    }
+
+#addButton{
+    position: absolute;
+    color: steelblue;
+    cursor: pointer;
+    transition: .3s ease;
+    border: 1px solid steelblue;
+    padding: 5px 0px;
+    font-weight: bold;
+    font-size: 15px;
+    display: inline-block;
+    bottom:0;
+    width :100%;
+}
+
+    #addButton:hover {
+        background: steelblue;
+        color: #fff;
+        transition: .3s ease;
+    }
+
+
+input.txt2 {
+display: inline-block;
+height:100px;
+width:300px;
+border: 1px solid #999;
+box-sizing: border-box;
+}
+
+.insert {
+text-align:justify;
+text-justify: auto;
+}
+
+.popup_wrap input {
+display: none;
+}
+
+.popup_overlay {
+display: flex;
+justify-content: center;
+overflow: auto;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 9999;
+width: 100%;
+height: 100%;
+background: lightsteelblue;
+opacity: 0;
+transition: opacity 0.5s, transform 0s 0.5s;
+transform: scale(0);
+}
+
+.popup_trigger {
+position: absolute;
+width: 100%;
+height: 100%;
+}
+
+.popup_content {
+position: relative;
+align-self: center;
+height: 150px;
+width: 75%;
+max-width: 800px;
+box-sizing: border-box;
+background: #fff;
+line-height: 1.4em;
+transition: 0.5s;
+border-radius: 12px;
+box-shadow: 0 0 5px rgba(94, 94, 94, 0.7);
+}
+
+.popup_content p {
+    padding: 20px 20px 5px 20px;
+    text-align: center;
+}
+
+.close_btn {
+position: absolute;
+top: 14px;
+right: 16px;
+font-size: 30px;
+cursor: pointer;
+color: steelblue;
+}
+
+.ok {
+position: absolute;
+top: 90px;
+color: steelblue;
+border-radius: 3px;
+cursor: pointer;
+transition: .3s ease;
+border: 1px solid steelblue;
+padding: 5px 15px;
+font-weight: bold;
+left: 43%;
+text-decoration: none;
+}
+
+.ok:hover {
+    background: steelblue;
+    color: #fff;
+    transition: .3s ease;
+}
+
+.popup_wrap input:checked ~ .popup_overlay {
+opacity: 1;
+transform: scale(1);
+transition: opacity 0.5s;
+}
+
+.open_btn {
+position: absolute;
+color: steelblue;
+border-radius: 3px;
+cursor: pointer;
+transition: .3s ease;
+border: 1px solid steelblue;
+padding: 5px 15px;
+font-weight: bold;
+left: 43%;
+}
+
+.open_btn:hover {
+    background: steelblue;
+    color: #fff;
+    transition: .3s ease;
+}
+
+/*会社名*/
+.cp_iptxt1 {
+position: relative;
+width: 80%;
+margin-left: 10%;
+}
+.cp_iptxt1 input[type='text'] {
+font: 15px/24px sans-serif;
+box-sizing: border-box;
+width: 100%;
+letter-spacing: 1px;
+padding-left: 1em;
+}
+.cp_iptxt1 input[type='text']:focus {
+outline: none;
+}
+.ef {
+padding: 7px 14px;
+transition: 0.4s;
+border: 1px solid #1b2538;
+background: transparent;
+}
+
+/*
+    .ef :valid {
+    display: none;
+    opacity: 0;
+}
+*/
+
+.ef ~ .focus_line:before,
+.ef ~ .focus_line:after {
+position: absolute;
+top: 0;
+left: 0;
+width: 0;
+height: 2px;
+content: '';
+transition: 0.3s;
+background-color: #da3c41;
+}
+.ef ~ .focus_line:after {
+top: auto;
+right: 0;
+bottom: 0;
+left: auto;
+}
+.ef ~ .focus_line i:before,
+.ef ~ .focus_line i:after {
+position: absolute;
+top: 0;
+left: 0;
+width: 2px;
+height: 0;
+content: '';
+transition: 0.4s;
+background-color: #da3c41;
+}
+.ef ~ .focus_line i:after {
+top: auto;
+right: 0;
+bottom: 0;
+left: auto;
+}
+.ef:focus ~ .focus_line:before,
+.ef:focus ~ .focus_line:after,
+.cp_iptxt1.ef ~ .focus_line:before,
+.cp_iptxt1.ef ~ .focus_line:after {
+width: 100%;
+transition: 0.3s;
+}
+.ef:focus ~ .focus_line i:before,
+.ef:focus ~ .focus_line i:after,
+.cp_iptxt1.ef ~ .focus_line i:before,
+.cp_iptxt1.ef ~ .focus_line i:after {
+height: 100%;
+transition: 0.4s;
+}
+
+.ef ~ label {
+    position: absolute;
+    z-index: -1;
+    top: 10px;
+    left: 14px;
+    width: 100%;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+
+.ef:focus ~ label,
+.cp_iptxt1.ef ~ label {
+font-size: 12px;
+top: -18px;
+left: 0;
+transition: 0.3s;
+color: #da3c41;
+}
+
+/*時間　テキストボックス*/
+.cp_iptxt2 {
+position: relative;
+width: 80%;
+margin-left: 10%;
+margin-top: 5%
+}
+
+.cp_iptxt2 input[type='text'] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    letter-spacing: 1px;
+    padding-left: 1em;
+}
+
+    .cp_iptxt2 input[type='text']:focus {
+        outline: none;
+    }
+
+.ef:focus ~ .focus_line:before,
+.ef:focus ~ .focus_line:after,
+.cp_iptxt2.ef ~ .focus_line:before,
+.cp_iptxt2.ef ~ .focus_line:after {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.ef:focus ~ .focus_line i:before,
+.ef:focus ~ .focus_line i:after,
+.cp_iptxt2.ef ~ .focus_line i:before,
+.cp_iptxt2.ef ~ .focus_line i:after {
+    height: 100%;
+    transition: 0.4s;
+}
+
+.ef:focus ~ label,
+.cp_iptxt2.ef ~ label {
+    font-size: 12px;
+    top: -18px;
+    left: 0;
+    transition: 0.3s;
+    color: #da3c41;
+}
+
+/*場所*/
+.cp_iptxt3 {
+position: relative;
+width: 80%;
+margin-left: 10%;
+margin-top: 5%
+}
+
+.cp_iptxt3 input[type='text'] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    letter-spacing: 1px;
+    padding-left: 1em;
+}
+
+    .cp_iptxt4 input[type='text']:focus {
+        outline: none;
+    }
+
+.ef:focus ~ .focus_line:before,
+.ef:focus ~ .focus_line:after,
+.cp_iptxt3.ef ~ .focus_line:before,
+.cp_iptxt3.ef ~ .focus_line:after {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.ef:focus ~ .focus_line i:before,
+.ef:focus ~ .focus_line i:after,
+.cp_iptxt3.ef ~ .focus_line i:before,
+.cp_iptxt3.ef ~ .focus_line i:after {
+    height: 100%;
+    transition: 0.4s;
+}
+
+.ef:focus ~ label,
+.cp_iptxt3.ef ~ label {
+    font-size: 12px;
+    top: -18px;
+    left: 0;
+    transition: 0.3s;
+    color: #da3c41;
+}
+
+/*電話番号*/
+.cp_iptxt4 {
+position: relative;
+width: 80%;
+margin-left: 10%;
+margin-top: 5%
+}
+
+.cp_iptxt4 input[type='text'] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    letter-spacing: 1px;
+    padding-left: 1em;
+}
+
+    .cp_iptxt4 input[type='text']:focus {
+        outline: none;
+    }
+
+.ef:focus ~ .focus_line:before,
+.ef:focus ~ .focus_line:after,
+.cp_iptxt4.ef ~ .focus_line:before,
+.cp_iptxt4.ef ~ .focus_line:after {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.ef:focus ~ .focus_line i:before,
+.ef:focus ~ .focus_line i:after,
+.cp_iptxt4.ef ~ .focus_line i:before,
+.cp_iptxt4.ef ~ .focus_line i:after {
+    height: 100%;
+    transition: 0.4s;
+}
+
+.ef:focus ~ label,
+.cp_iptxt4.ef ~ label {
+    font-size: 12px;
+    top: -18px;
+    left: 0;
+    transition: 0.3s;
+    color: #da3c41;
+}
+
+/*メールアドレス*/
+.cp_iptxt5 {
+position: relative;
+width: 80%;
+margin-left: 10%;
+margin-top: 5%
+}
+
+.cp_iptxt5 input[type='text'] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    letter-spacing: 1px;
+    padding-left: 1em;
+}
+
+    .cp_iptxt5 input[type='text']:focus {
+        outline: none;
+    }
+
+.ef:focus ~ .focus_line:before,
+.ef:focus ~ .focus_line:after,
+.cp_iptxt5.ef ~ .focus_line:before,
+.cp_iptxt5.ef ~ .focus_line:after {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.ef:focus ~ .focus_line i:before,
+.ef:focus ~ .focus_line i:after,
+.cp_iptxt5.ef ~ .focus_line i:before,
+.cp_iptxt5.ef ~ .focus_line i:after {
+    height: 100%;
+    transition: 0.4s;
+}
+
+
+.ef:focus ~ label,
+.cp_iptxt5.ef ~ label {
+    font-size: 12px;
+    top: -18px;
+    left: 0;
+    transition: 0.3s;
+    color: #da3c41;
+}
+
+/*備考*/
+.cp_iptxt6 {
+position: relative;
+width: 80%;
+margin-left: 10%;
+margin-top: 5%
+}
+
+.cp_iptxt6 input[type='text'] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    letter-spacing: 1px;
+    padding-left: 1em;
+}
+
+    .cp_iptxt6 input[type='text']:focus {
+        outline: none;
+    }
+
+.ef:focus ~ .focus_line:before,
+.ef:focus ~ .focus_line:after,
+.cp_iptxt6.ef ~ .focus_line:before,
+.cp_iptxt6.ef ~ .focus_line:after {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.ef:focus ~ .focus_line i:before,
+.ef:focus ~ .focus_line i:after,
+.cp_iptxt6.ef ~ .focus_line i:before,
+.cp_iptxt6.ef ~ .focus_line i:after {
+    height: 100%;
+    transition: 0.4s;
+}
+
+.ef:focus ~ label,
+.cp_iptxt6.ef ~ label {
+    font-size: 12px;
+    top: -18px;
+    left: 0;
+    transition: 0.3s;
+    color: #da3c41;
+}
+
+
+
+
+

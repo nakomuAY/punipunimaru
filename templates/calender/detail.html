@@ -1,0 +1,85 @@
+﻿{% extends "base.html" %}
+    {% block title %}
+      会社データ詳細画面
+    {% endblock %}
+
+{% load static %}
+
+     {% block link %}
+     <link rel="stylesheet" href="{%static 'css/calender/detail.css' %}">
+     {% endblock %}
+
+{% block content %}
+    <div id="dialog">
+        <h1>選択中の会社情報</h1>
+        {% for select in select_data %}
+        <table id="input_data">
+            <form method ="POST" action ="{% url 'calender' %}" name="edit_data">
+            {% csrf_token %}
+            <tr>
+                <td>会社名</td>
+                <td>:</td>
+                <td><input type="text" value="{{ select.con_name }}" readonly name="edit_con_name"></td>
+                <td><input type="hidden" value="{{ select.id }}" readonly name="edit_id"></td>
+            </tr>
+            <tr>
+                <td>面接日</td>
+                <td>:</td>
+                <td><input type="text" value="{{ select.inter_date }}" readonly name="edit_con_day"></td>
+            </tr>
+            <tr>
+                <td>面接時間</td>
+                <td>:</td>
+                <td><input type="time" value="{{ select.inter_time }}" readonly name="edit_con_time"></td>
+            </tr>
+            <tr>
+                <td>場所</td>
+                <td>:</td>
+                <td><input type="text" value="{{ select.con_place }}" readonly name="edit_con_place"></td>
+            </tr>
+            <tr>
+                <td>電話番号</td>
+                <td>:</td>
+                <td><input type="text" value="{{ select.tel_number }}" readonly name="edit_con_tel"></td>
+            </tr>
+            <tr>
+                <td>メールアドレス</td>
+                <td>:</td>
+                <td><input type="text" value="{{ select.con_address }}" readonly name="edit_con_email"></td>
+            </tr>
+            <tr>
+                <td>備考</td>
+                <td>:</td>
+                <td><input type="text" value="{{ select.note }}" readonly name="edit_con_memo"></td>
+            </tr>
+            <tr>
+                <td>表示色</td>
+                <td>:</td>
+                <td ><input type="hidden" value="{{ select.color }}" list id="color" name="edit_con_color"></td>
+            </tr>
+            </form>
+        </table>
+        <form method="post" action="{% url 'calender'%}" name="delete_data" >
+            {% csrf_token %}
+            <input type="hidden" value="{{ select.id }}" name="delete_id">
+        </form>
+        {% endfor %}
+        <button id="edit" onclick="edit()">編集</button>
+        <button id="delete" onclick="deleteDialog()">削除</button>
+    </div>
+
+    <dialog id="deleteCheck">
+        <p id="msg">削除してもよろしいですか?</p>
+        <button id="OK" onclick="okDialog()">OK</button>
+        <button id="cancel" onclick="closeDialog()">キャンセル</button>
+    </dialog>
+
+    <dialog id="editDone">
+        <p id="msg">編集しました</p>
+        <button id="return" onclick="editDone()">戻る</button>
+    </dialog>
+
+
+    <script src="{%static 'js/calender/detail.js' %}" type="text/javascript"></script>
+
+{% endblock %}

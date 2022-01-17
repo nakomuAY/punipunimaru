@@ -1,0 +1,11 @@
+#info_tbl .con_name{
+    padding:0px 5px ;
+    margin-left:1%;
+    font-size:35px;
+    border-left:solid 7px;
+}
+
+#info_tbl .color{
+    color:white;
+}
+

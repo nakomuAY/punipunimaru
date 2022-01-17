@@ -1,0 +1,171 @@
+﻿{% extends "base.html" %}
+　　{% block title %}
+    対面モード設定画面
+    {% endblock %}
+
+{% load static %}
+
+     {% block link %}
+     <link rel="stylesheet" href="{%static 'css/mode/inPersonSet.css' %}">
+     {% endblock %}
+
+{% block content %}
+
+<p class="title">
+    <span class="a">対</span>
+    <span class="b">面</span>
+    <span class="c">モ</span>
+    <span class="d">ー</span>
+    <span class="e">ド</span>
+</p>
+
+<p class="detail">「対面」モードでは実際の面接に基づいた練習ができます。<br />
+    「本番」に対し、面接官キャラクター、人数、質問数を選択できます。</p>
+
+<div class="main1">
+
+    <h3 id="setumei">＜面接官を選んでください(最大３人まで)＞(ダブルクリックで選択)</h3><br>
+    <script type="text/javascript" src="{%static 'js/mode/inpersonSet.js' %}"></script>
+
+    <table border="0" width="1500" cellpadding="0" cellspacing="10">
+        <tr id="mainImg">
+            <td width="350" align="right">
+                <img src="{%static 'images/character/man1.png' %}"
+                     width="555" height="523" alt="拡大写真" name="ph01">
+            </td>
+            <td>
+                <div id="prf">面接官のプロフィール</div>
+            </td>
+        </tr>
+    </table>
+    <table class="sub" border="0" width="1500" cellpadding="0" cellspacing="0">
+        <tr class="subImg">
+            <td width="120">
+                <a href="javascript:document.ph01.src = '{%static 'images/character/man1.png' %}'; void(0); ">
+                  <input type="image" id="1" src="{%static 'images/character/man1.png' %}" width="198" height="207"
+                         alt="写真1" onclick="document.getElementById('prf').innerHTML='八木巻 涼太　25歳<img src=\'/static/images/sampleVoice.png \' width=\'50px\' height=\'50px\' onclick=\'sampleVoice()\'><br><br>'+
+                                                                                       '<table class=\'chara_info_table\'><tr><td class=\'koumoku\'>質問項目</td><td>：</td><td  class=\'naiyou\'>志望動機について/自己評価について</td></tr>'
+                                                                                             +'<tr><td class=\'koumoku\'>性格</td><td>：</td><td class=\'naiyou\'>努力家,責任感が強い</td></table>';"
+                         ondblclick="imgDoubleclick(1)">
+                </a>
+                <p id="moji1"></p>
+            </td>
+            <td width="120">
+                <a href="javascript:document.ph01.src = '{%static 'images/character/woman1.png' %}'; void(0); ">
+                    <input type="image" id="2" src="{%static 'images/character/woman1.png' %}" width="198" height="207"
+                           alt="写真4" vspace="10" onclick="document.getElementById('prf').innerHTML='如月 玲　26歳<img src=\'/static/images/sampleVoice.png \' width=\'50px\' height=\'50px\' onclick=\'sampleVoice()\'><br><br>'+
+                                                                                                     '<table class=\'chara_info_table\'><tr><td class=\'koumoku\'>質問項目</td><td class=\'naiyou\'>：</td><td>あなたについて</td></tr>'
+                                                                                                        +'<tr><td class=\'koumoku\'>性格</td><td>：</td><td class=\'naiyou\'>クール,頭脳明晰</td></table>';"
+                                                                                                                                 
+                           
+                           ondblclick="imgDoubleclick(2)">
+                  </a>
+                <p id="moji2"></p>
+            </td>
+            <td width="120">
+                <a href="javascript:document.ph01.src = '{%static 'images/character/man2.png' %}'; void(0); ">
+                  <input type="image" id="3" src="{%static 'images/character/man2.png' %}" width="198" height="207"
+                         alt="写真3" vspace="10" onclick="document.getElementById('prf').innerHTML='小井沼 雄二　37歳<img src=\'/static/images/sampleVoice.png \' width=\'50px\' height=\'50px\' onclick=\'sampleVoice()\'><br><br>'+
+                                                                                                   '<table class=\'chara_info_table\'><tr><td class=\'koumoku\'>質問項目</td><td class=\'naiyou\'>：</td><td>目標・キャリアプランについて</td></tr>'
+                                                                                                        +'<tr><td class=\'koumoku\'>性格</td><td>：</td><td class=\'naiyou\'>誠実</td></table>';"
+                                                                                                                                 
+                         ondblclick="imgDoubleclick(3)">
+                </a>
+                <p id="moji3"></p>
+            </td>
+            <td width="120">
+                <a href="javascript:document.ph01.src = '{%static 'images/character/woman2.png' %}'; void(0); ">
+                  <input type="image" id="4" src="{%static 'images/character/woman2.png' %}"width="198" height="207"
+                         alt="写真4" vspace="10" onclick="document.getElementById('prf').innerHTML='早乙女 真由美　41歳<img src=\'/static/images/sampleVoice.png \' width=\'50px\' height=\'50px\' onclick=\'sampleVoice()\'><br><br>'+
+                                                                                                   '<table class=\'chara_info_table\'><tr><td class=\'koumoku\'>質問項目</td><td class=\'naiyou\'>：</td><td>経験談について</td></tr>'
+                                                                                                        +'<tr><td class=\'koumoku\'>性格</td><td>：</td><td class=\'naiyou\'>真面目/面倒見がいい</td></table>';"
+                                                                                         
+                         ondblclick="imgDoubleclick(4)">
+                </a>
+                <p id="moji4"></p>
+            </td>
+            <td width="120">
+                <a href="javascript:document.ph01.src = '{%static 'images/character/man3.png' %}'; void(0); ">
+                  <input type="image" id="5" src="{%static 'images/character/man3.png' %}" width="198" height="207"
+                         alt="写真5" vspace="10" onclick="document.getElementById('prf').innerHTML='鳳凰 仁　60歳<img src=\'/static/images/sampleVoice.png \' width=\'50px\' height=\'50px\' onclick=\'sampleVoice()\'><br><br>'+
+                                                                                                    '<table class=\'chara_info_table\'><tr><td class=\'koumoku\'>質問項目</td><td class=\'naiyou\'>：</td><td>その他の質問</td></tr>'
+                                                                                                        +'<tr><td class=\'koumoku\'>性格</td><td>：</td><td class=\'naiyou\'>圧が強い</td></table>';"
+                         ondblclick="imgDoubleclick(5)">
+                </a>
+                <p id="moji5"></p>
+            </td>
+            <td width="120">
+                <a href="javascript:document.ph01.src = '{%static 'images/character/woman3.png' %}'; void(0); ">
+                  <input type="image" id="6" src="{%static 'images/character/woman3.png' %}"width="198" height="207"
+                         alt="写真6" onclick="document.getElementById('prf').innerHTML='藤野 福　56歳<img src=\'/static/images/sampleVoice.png \' width=\'50px\' height=\'50px\' onclick=\'sampleVoice()\'><br><br>'+
+                                                                                        '<table class=\'chara_info_table\'><tr><td class=\'koumoku\'>質問項目</td><td class=\'naiyou\'>：</td><td>勤務条件/答えにくい・困りやすい質問</td></tr>'
+                                                                                                        +'<tr><td class=\'koumoku\'>性格</td><td>：</td><td class=\'naiyou\'>温厚</td></table>';"
+                         ondblclick="imgDoubleclick(6)">
+                </a>
+                <p id="moji6"></p>
+            </td>
+        </tr>
+    </table>
+
+    <table id="human">
+        <tr>
+            <td>＜1人目＞</td><td>＜2人目＞</td><td>＜3人目＞</td>
+        </tr>
+        <tr>
+            <td><img id="img1" width="198" height="207" ondblclick="boxDoubleclick(1)"></td>
+            <td><img id="img2" width="198" height="207" ondblclick="boxDoubleclick(2)"></td>
+            <td><img id="img3" width="198" height="207" ondblclick="boxDoubleclick(3)"></td>
+        </tr>
+    </table>
+
+</div>
+<div class="main2">
+
+    <h3 id="setumei2">＜練習したい質問数を選択してください＞ ※最大10問まで</h3>
+
+    <div class="toi">
+        <select id="question-su" onchange="jump()">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+            <option value=9>9</option>
+            <option value=10>10</option>
+        </select>
+        <label for="question-su">問</label>
+    </div>
+</div>
+    
+    <dialog id="dialog">
+        <div class="charaField">
+          <button id="previous" onclick="previous()">‹</button>
+          <button id="next" onclick="next()">›</button>
+          <img id ="chara" src="" width="356" height="372">
+        </div>
+        
+        <div class = "selectField">
+          <p>面接官の人数:<span id="ninzu"></span></p>
+          <p>質問数　　　:<span id="toi"></span> 　　質問はランダムに出題されます。</p><br>
+          <p>上記の内容で面接練習を開始します</p>
+          <div id="test" ></div>
+        </div>
+
+        <form action="{% url 'inPersonStart' %}" method="post"  name="inPersonform" >
+            {% csrf_token %}
+            <input type="hidden" name = "chara[]" id="chara" >
+            <input type="hidden" name = "situmonsu" id="situmonsu" >
+            <input type="submit" class="start"  value="面接開始">
+        </form>
+
+        <button class="cancel" onclick="closeDialog()">設定に戻る</button>
+    </dialog>
+
+<div class="main3">
+    <input type="button" class="open_btn" value="OK" onclick="openDialog()" >
+</div>
+
+{% endblock %}

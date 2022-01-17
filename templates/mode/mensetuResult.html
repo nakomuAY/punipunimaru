@@ -1,0 +1,60 @@
+﻿{% extends "base.html" %}
+　　{% block title %}
+    面接結果画面
+    {% endblock %}
+
+{% load static %}
+
+     {% block link %}
+     <link rel="stylesheet" href="{%static 'css/mode/mensetuResult.css' %}">
+     {% endblock %}
+    
+     {% block content %}
+
+     <p class="title">
+        <span class="a">対</span>
+        <span class="b">面</span>
+        <span class="c">モ</span>
+        <span class="d">ー</span>
+        <span class="e">ド</span>
+    </p>
+    
+    <p class="detail">質問ごとに録音した内容を文字に起こした結果です。<br />
+        自身で見直し、内容の重複、言葉の反復などが無いかを確認しましょう！<br />
+        <br />
+        今回の練習で気づいたこと、本番に向けて気を付けることなどのメモを残し、次回の練習する際に復習しましょう。</p>
+     
+    <div class="Resultsheet">
+        <input type="hidden" id="mensetuChara" value="{{ chara }}">
+        <!-- base.cssとクラス名が被るのでNを大文字にしてます-->
+        <div class="userName">
+            <h2>「{{ user.username }} 」さんの面接結果</h2>
+        </div>
+        <br><br><br>
+
+        <h3 id="mensetuNames">面接者：<span id="mensetuName">{{ resultChara }}</span></h3>
+        <h3 id="mensetutime">面接時間：{{ resultTime }}</h3>
+        <div class="box1">
+            <span class="box-title">文字起こし</span>
+            <div id="resultField">
+                <span id="resultQuestion"> {{ resultQuestion }}</span>
+                <span id="resultMojiokoshi">{{ resultMojiokoshi }}</span>
+            <span class="box-question"></span>
+            </div>
+
+        </div>
+
+        <textarea name="memo" id="memo" placeholder=" メモ"></textarea>
+        <form action="{% url 'inPersonStart' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" id="result_btn1" value="もう１度練習"></input>
+            <input type="hidden" name = "chara[]" id = "chara" value=""></input>
+            <input type="hidden" name = "situmonsu" id = "situmonsu" value=""></input>
+        </form>
+        <a href="{% url 'inPersonSet' %}" ><button id="result_btn2">設定を変更して練習</button></a>
+        <a href="{% url 'home' %}" ><button id="result_btn3">ホームに戻る</button></a>
+
+        <script type="text/javascript" src="{%static 'js/mode/mensetuResult.js' %}"></script>
+
+    </div>
+    {% endblock %}

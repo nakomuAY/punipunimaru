@@ -1,0 +1,49 @@
+﻿{% extends "base.html" %}
+　　{% block title %}
+    録音画面
+    {% endblock %}
+{% block content %}
+
+{% load static %}
+
+     {% block link %}
+     <link rel="stylesheet" href="{%static 'css/mode/oneAnsStart.css' %}">
+     {% endblock %}
+     
+      <form action="{% url 'oneAnsResult' %} " name="testform" method="POST">
+        <!-- csrf_token・・・セキュリティ対策(必須)-->
+        {% csrf_token %}
+   
+        <!-- 録音時間を表示する -->
+        <p id="timer">00:00:00</p>
+
+        <p class="title">
+          <span class="a">1</span>
+          <span class="b">問</span>
+          <span class="c">1</span>
+          <span class="d">答</span>
+          <span class="e">モ</span>
+          <span class="f">ー</span>
+          <span class="g">ド</span>
+      </p>
+
+        <p class="detail">「録音を開始する」から、練習を開始できます。<br />
+          答え終わったら「録音を終了する」を押して、結果を見に行きましょう！<br />
+        <br />
+        ※録音が開始されると、表示されているボタンが「録音を開始する」➡「録音を終了する」へ変わります。</p>
+
+        <!-- 録音ボタンを表示する -->
+        <button type="button" id="start-btn">録音を開始する</button>
+
+        <!-- 会話する処理を読み込む -->
+        <div id="result-div"></div>
+        <input type="hidden" id="test-div" name="resultText" value ="{{resultText}}"/>
+        <input type="hidden" id="resultTime" name="resultTime" value ="{{resultTime}}" />
+        <input type="hidden" id="question" name="question" value ="{{question}}"/>
+
+
+        <script type="text/javascript" src="{%static 'js/mode/oneAnsStart.js' %}"></script>
+         
+      </form>
+
+{% endblock %}

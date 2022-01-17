@@ -1,0 +1,141 @@
+<!-- templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>
+      {% block title %}
+      <!-- タイトルは継承先で定義する　-->
+      {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{%static 'css/base.css' %}">
+    <link rel="stylesheet" href="{%static 'css/setting.css' %}">
+    <link rel="shortcut icon" href="{%static 'images/favicon.png' %}">
+     {% block link %}
+       <!-- css/jsなどのlinkがある場合はここに追記する-->
+     {% endblock %}
+</head>
+<body>
+        <div class="back1"></div>
+        <div class="back2"></div>
+
+
+        <!--アイコン表示(クリックしたらホーム画面へ)-->
+        <a href="{% url 'home' %}" class="logo"><img src="{%static 'images/ロゴ白.png' %}" title="ロゴ" width="70" height="70"></a>
+
+        <!--ログアウト・設定ボタンの表示-->
+        <div class="username">{{ user.username }} でログイン中</div>
+        <a href="{% url 'login' %}" class="logout">ログアウト</a>
+        <a href="#modal" class="settei">設定</a>
+
+        {% block content %}
+        <!-- 中身は継承先で定義する　-->
+       {% endblock %}
+
+    <!-- モーダルエリアここから -->
+    <div class="modal-open"></div>
+    <div class="modal" id="modal">
+        <a href="#!" class="overlay"></a>
+        <div class="modal-wrapper">
+                <a href="#!" class="modal-close">✕</a>
+                <div class="modal-content">
+                    <table class="setting_table">
+                        <tr><td>録音・録画を履歴に残す</td>
+                            <td class="kuhaku">　　 </td>
+                            <td>
+                                <div class="sample1Area" id="makeImg">
+                                    <input type="checkbox" id="sample1check" checked="">
+                                    <label for="sample1check">
+                                        <span id="sample1box"></span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 秒数間隔変換      </td>
+                            <td class="kuhaku">   </td>
+                            <td>
+                                <label for="seconds">秒数指定：</label>
+                                <select id="seconds" onchange="jump()">
+                                    <option value=0>　３秒</option>
+                                    <option value=1>　５秒</option>
+                                    <option value=2>　７秒</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6>*質問から次の質問への間隔の秒数</h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>面接官の音量選択   </td>
+                            <td class="kuhaku">   </td>
+                        </tr>
+                        <tr><td>カメラ・マイクの試運転</td>
+                            <td class="kuhaku">     </td>
+                            <td>
+                                <button type="button" class="button_table">テスト</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>カメラ・マイクの使用許可</td>
+                        </tr>
+                        <tr><td>カメラの使用許可    </td>
+                            <td class="kuhaku">   </td>
+                            <td>
+                                <div class="sample2Area" id="makeImg">
+                                    <input type="checkbox" id="sample2check" checked="">
+                                    <label for="sample2check">
+                                        <span id="sample2box"></span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr><td>マイクの使用許可   </td>
+                            <td class="kuhaku">   </td>
+                            <td>
+                                <div class="sample3Area" id="makeImg">
+                                    <input type="checkbox" id="sample3check" checked="">
+                                    <label for="sample3check">
+                                        <span id="sample3box"></span>
+                                    </label>
+                                </div>
+                            <td>
+                        </tr>
+                        <tr>
+                            <td>面接練習結果の履歴</td>
+                        </tr>
+                        <tr>
+                            <td>〇消去までの期間   </td>
+                            <td class="kuhaku">   </td>
+                            <td>
+                                <label for="period">期間指定：</label>
+                                <select id="period" onchange="jump()">
+                                    <option value=0>３ヵ月</option>
+                                    <option value=1>６ヵ月</option>
+                                    <option value=2>１年</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr><td>〇すべて消去       </td>
+                            <td class="kuhaku">   </td>
+                            <td>
+                                <button type="button" class="button_table">消去</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div class = "btn">
+                            <div class="btn1"><button type="button">デフォルトに戻す</button></div>
+                            <div class="btn2"><button type="button">アカウント情報を変更</button></div><br>
+                            <div class="btn3"><button type="button" style="background-color:crimson;">退会</button></div>
+                    </div>
+                    
+        </div>
+    </div>
+    <!-- モーダルエリアここまで -->
+
+</body>
+</html>

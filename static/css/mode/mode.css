@@ -1,0 +1,495 @@
+﻿@charset "UTF-8";
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* overflow: hidden; */
+  font-size: 30px;
+  color: black;
+  opacity: 0.6;
+  margin: 120px 32% 0% 32%;
+}
+
+.title span {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20px;
+          flex: 0 0 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  display: block;
+  position: relative;
+  margin: 0 auto 0 auto;
+}
+
+.title .a {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  /*1で解説*/
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  /*2で解説*/
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  /*3で解説*/
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  /*4で解説*/
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  /*5で解説*/
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  /*6で解説*/
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  /*7で解説*/
+}
+
+.title .b {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  /*1で解説*/
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  /*2で解説*/
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  /*3で解説*/
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  /*4で解説*/
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  /*5で解説*/
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  /*6で解説*/
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  /*7で解説*/
+}
+
+.title .c {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  /*1で解説*/
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  /*2で解説*/
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  /*3で解説*/
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  /*4で解説*/
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  /*5で解説*/
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  /*6で解説*/
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  /*7で解説*/
+}
+
+.title .d {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  /*1で解説*/
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  /*2で解説*/
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  /*3で解説*/
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  /*4で解説*/
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  /*5で解説*/
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  /*6で解説*/
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  /*7で解説*/
+}
+
+.title .e {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  /*1で解説*/
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  /*2で解説*/
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  /*3で解説*/
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  /*4で解説*/
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  /*5で解説*/
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  /*6で解説*/
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  /*7で解説*/
+}
+
+.title .f {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  /*1で解説*/
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  /*2で解説*/
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  /*3で解説*/
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  /*4で解説*/
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  /*5で解説*/
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  /*6で解説*/
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  /*7で解説*/
+}
+
+.title .g {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  /*1で解説*/
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  /*2で解説*/
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  /*3で解説*/
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  /*4で解説*/
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  /*5で解説*/
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+  /*6で解説*/
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  /*7で解説*/
+}
+
+.title .h {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  /*1で解説*/
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  /*2で解説*/
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  /*3で解説*/
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  /*4で解説*/
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  /*5で解説*/
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  /*6で解説*/
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  /*7で解説*/
+}
+
+.title .i {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  /*1で解説*/
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  /*2で解説*/
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  /*3で解説*/
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  /*4で解説*/
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  /*5で解説*/
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  /*6で解説*/
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  /*7で解説*/
+}
+
+/*1で解説*/
+@-webkit-keyframes fadeInAnime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInAnime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.detail {
+  margin-top: 60px;
+  text-align: center;
+  color: black;
+  opacity: 0.7;
+  font-size: 13px;
+  letter-spacing: 3px;
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  /*1で解説*/
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  /*2で解説*/
+  -webkit-animation-duration: 2.0s;
+          animation-duration: 2.0s;
+  /*3で解説*/
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  /*4で解説*/
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  /*5で解説*/
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  /*6で解説*/
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  /*7で解説*/
+}
+
+.pricelist-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 130px 23% 0% 23%;
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  /*1で解説*/
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  /*2で解説*/
+  -webkit-animation-duration: 2.0s;
+          animation-duration: 2.0s;
+  /*3で解説*/
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  /*4で解説*/
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  /*5で解説*/
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  /*6で解説*/
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  /*7で解説*/
+}
+
+/*   .pricelist-contents li {
+        flex: 0 0 400px;
+        display: flex;
+        flex-flow: column;
+        background-color: gainsboro;
+        border-radius: 20px;
+    }
+     */
+.pricelist-contents a {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 360px;
+          flex: 0 0 360px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  text-decoration: none;
+  border-radius: 15px;
+  color: black;
+}
+
+.pricelist-contents .p1 {
+  margin-top: 30px;
+  text-align: center;
+  color: black;
+  opacity: 0.8;
+  font-size: 28px;
+}
+
+.pricelist-contents .p2 {
+  margin: 30px 50px 0px 50px;
+  color: black;
+  opacity: 0.8;
+  font-size: 15px;
+}
+
+.buttons {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.blob-btn {
+  z-index: 1;
+  position: relative;
+  padding: 20px 46px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: gainsboro;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+
+.blob-btn:before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 6px solid gainsboro;
+}
+
+.blob-btn:after {
+  content: "";
+  z-index: -2;
+  position: absolute;
+  left: 9px;
+  top: 9px;
+  width: 100%;
+  height: 100%;
+  border: 6px solid #4c444d;
+  -webkit-transition: all 0.3s 0.2s;
+  transition: all 0.3s 0.2s;
+}
+
+.blob-btn:hover {
+  color: #4c444d;
+}
+
+.blob-btn:hover:after {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  left: 0;
+  top: 0;
+}
+
+.blob-btn__inner {
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 102%;
+  height: 104%;
+}
+
+.blob-btn__blobs {
+  position: relative;
+  display: block;
+  height: 120%;
+  -webkit-filter: url("#goo");
+          filter: url("#goo");
+}
+
+.blob-btn__blob {
+  position: absolute;
+  top: 6px;
+  width: 32.5%;
+  height: 100%;
+  background: gainsboro;
+  border-radius: 100%;
+  -webkit-transform: translate3d(0, 150%, 0) scale(1.7);
+          transform: translate3d(0, 150%, 0) scale(1.7);
+  -webkit-transition: -webkit-transform 0.45s;
+  transition: -webkit-transform 0.45s;
+  transition: transform 0.45s;
+  transition: transform 0.45s, -webkit-transform 0.45s;
+}
+
+@supports ((-webkit-filter: url("#goo")) or (filter: url("#goo"))) {
+  .blob-btn__blob {
+    -webkit-transform: translate3d(0, 150%, 0) scale(1.4);
+            transform: translate3d(0, 150%, 0) scale(1.4);
+  }
+}
+
+.blob-btn__blob:nth-child(1) {
+  left: 0%;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.blob-btn__blob:nth-child(2) {
+  left: 30%;
+  -webkit-transition-delay: 0.08s;
+          transition-delay: 0.08s;
+}
+
+.blob-btn__blob:nth-child(3) {
+  left: 60%;
+  -webkit-transition-delay: 0.16s;
+          transition-delay: 0.16s;
+}
+
+.blob-btn__blob:nth-child(4) {
+  left: 90%;
+  -webkit-transition-delay: 0.24s;
+          transition-delay: 0.24s;
+}
+
+.blob-btn:hover .blob-btn__blob {
+  -webkit-transform: translateZ(0) scale(1.7);
+          transform: translateZ(0) scale(1.7);
+}
+
+@supports ((-webkit-filter: url("#goo")) or (filter: url("#goo"))) {
+  .blob-btn:hover .blob-btn__blob {
+    -webkit-transform: translateZ(0) scale(1.4);
+            transform: translateZ(0) scale(1.4);
+  }
+}
+/*# sourceMappingURL=mode.css.map */

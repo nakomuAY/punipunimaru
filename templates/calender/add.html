@@ -1,0 +1,50 @@
+﻿{% extends "base.html" %}
+　　{% block title %}
+    会社登録画面
+    {% endblock %}
+
+{% load static %}
+
+     {% block link %}
+     <link rel="stylesheet" href="{%static 'css/calender/add.css' %}">
+     {% endblock %}
+
+{% block content %}
+    <div id="dialog">
+        <h1 class="add_h">登録画面</h1>
+        <div class="cp_iptxt1">
+            <input class="ef" type="text" placeholder="会社名*">
+            <label>会社名*</label>
+            <span class="focus_line"><i></i></span>
+        </div>
+        <div class="cp_iptxt2">
+            <input class="ef" type="text" placeholder="時間">
+            <label>時間</label>
+            <span class="focus_line"><i></i></span>
+        </div>
+        <div class="cp_iptxt3">
+            <input class="ef" type="text" placeholder="場所">
+            <label>場所</label>
+            <span class="focus_line"><i></i></span>
+        </div>
+        <div class="cp_iptxt4">
+            <input class="ef" type="text" placeholder="電話番号">
+            <label>電話番号</label>
+            <span class="focus_line"><i></i></span>
+        </div>
+        <div class="cp_iptxt5">
+            <input class="ef" type="text" placeholder="メールアドレス">
+            <label>メールアドレス</label>
+            <span class="focus_line"><i></i></span>
+        </div>
+        <div class="cp_iptxt6">
+            <input class="ef" type="text" placeholder="備考">
+            <label>備考</label>
+            <span class="focus_line"><i></i></span>
+        </div>
+
+        <a href="{% url 'add_ck' %}" class="ok">登録</a>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,381 @@
+﻿
+#dialog {
+    border: 1px solid;
+    height: 700px;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -50%;
+    position:absolute;
+    background-color: white;
+
+}
+
+.add_h {
+    text-align: center;
+    margin-top: 10%;
+}
+
+/*会社名*/
+.cp_iptxt1 {
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+    .cp_iptxt1 input[type='text'] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 1em;
+    }
+
+        .cp_iptxt1 input[type='text']:focus {
+            outline: none;
+        }
+
+.ef {
+    padding: 7px 14px;
+    transition: 0.4s;
+    border: 1px solid #1b2538;
+    background: transparent;
+}
+
+    /*
+        .ef :valid {
+        display: none;
+        opacity: 0;
+    }
+    */
+
+    .ef ~ .focus_line:before,
+    .ef ~ .focus_line:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        content: '';
+        transition: 0.3s;
+        background-color: #da3c41;
+    }
+
+    .ef ~ .focus_line:after {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: auto;
+    }
+
+    .ef ~ .focus_line i:before,
+    .ef ~ .focus_line i:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 0;
+        content: '';
+        transition: 0.4s;
+        background-color: #da3c41;
+    }
+
+    .ef ~ .focus_line i:after {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: auto;
+    }
+
+    .ef:focus ~ .focus_line:before,
+    .ef:focus ~ .focus_line:after,
+    .cp_iptxt1.ef ~ .focus_line:before,
+    .cp_iptxt1.ef ~ .focus_line:after {
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    .ef:focus ~ .focus_line i:before,
+    .ef:focus ~ .focus_line i:after,
+    .cp_iptxt1.ef ~ .focus_line i:before,
+    .cp_iptxt1.ef ~ .focus_line i:after {
+        height: 100%;
+        transition: 0.4s;
+    }
+
+    .ef ~ label {
+        position: absolute;
+        z-index: -1;
+        top: 10px;
+        left: 14px;
+        width: 100%;
+        transition: 0.3s;
+        letter-spacing: 0.5px;
+        color: #ffffff;
+    }
+
+    .ef:focus ~ label,
+    .cp_iptxt1.ef ~ label {
+        font-size: 12px;
+        top: -18px;
+        left: 0;
+        transition: 0.3s;
+        color: #da3c41;
+    }
+
+/*時間　テキストボックス*/
+.cp_iptxt2 {
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%
+}
+
+    .cp_iptxt2 input[type='time'] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 1em;
+    }
+
+        .cp_iptxt2 input[type='time']:focus {
+            outline: none;
+        }
+
+    .ef:focus ~ .focus_line:before,
+    .ef:focus ~ .focus_line:after,
+    .cp_iptxt2.ef ~ .focus_line:before,
+    .cp_iptxt2.ef ~ .focus_line:after {
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    .ef:focus ~ .focus_line i:before,
+    .ef:focus ~ .focus_line i:after,
+    .cp_iptxt2.ef ~ .focus_line i:before,
+    .cp_iptxt2.ef ~ .focus_line i:after {
+        height: 100%;
+        transition: 0.4s;
+    }
+
+    .ef:focus ~ label,
+    .cp_iptxt2.ef ~ label {
+        font-size: 12px;
+        top: -18px;
+        left: 0;
+        transition: 0.3s;
+        color: #da3c41;
+    }
+
+/*場所*/
+.cp_iptxt3 {
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%
+}
+
+    .cp_iptxt3 input[type='text'] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 1em;
+    }
+
+.cp_iptxt4 input[type='text']:focus {
+    outline: none;
+}
+
+.ef:focus ~ .focus_line:before,
+.ef:focus ~ .focus_line:after,
+.cp_iptxt3.ef ~ .focus_line:before,
+.cp_iptxt3.ef ~ .focus_line:after {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.ef:focus ~ .focus_line i:before,
+.ef:focus ~ .focus_line i:after,
+.cp_iptxt3.ef ~ .focus_line i:before,
+.cp_iptxt3.ef ~ .focus_line i:after {
+    height: 100%;
+    transition: 0.4s;
+}
+
+.ef:focus ~ label,
+.cp_iptxt3.ef ~ label {
+    font-size: 12px;
+    top: -18px;
+    left: 0;
+    transition: 0.3s;
+    color: #da3c41;
+}
+
+/*電話番号*/
+.cp_iptxt4 {
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%
+}
+
+    .cp_iptxt4 input[type='text'] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 1em;
+    }
+
+        .cp_iptxt4 input[type='text']:focus {
+            outline: none;
+        }
+
+    .ef:focus ~ .focus_line:before,
+    .ef:focus ~ .focus_line:after,
+    .cp_iptxt4.ef ~ .focus_line:before,
+    .cp_iptxt4.ef ~ .focus_line:after {
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    .ef:focus ~ .focus_line i:before,
+    .ef:focus ~ .focus_line i:after,
+    .cp_iptxt4.ef ~ .focus_line i:before,
+    .cp_iptxt4.ef ~ .focus_line i:after {
+        height: 100%;
+        transition: 0.4s;
+    }
+
+    .ef:focus ~ label,
+    .cp_iptxt4.ef ~ label {
+        font-size: 12px;
+        top: -18px;
+        left: 0;
+        transition: 0.3s;
+        color: #da3c41;
+    }
+
+/*メールアドレス*/
+.cp_iptxt5 {
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%
+}
+
+    .cp_iptxt5 input[type='email'] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 1em;
+    }
+
+        .cp_iptxt5 input[type='email']:focus {
+            outline: none;
+        }
+
+    .ef:focus ~ .focus_line:before,
+    .ef:focus ~ .focus_line:after,
+    .cp_iptxt5.ef ~ .focus_line:before,
+    .cp_iptxt5.ef ~ .focus_line:after {
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    .ef:focus ~ .focus_line i:before,
+    .ef:focus ~ .focus_line i:after,
+    .cp_iptxt5.ef ~ .focus_line i:before,
+    .cp_iptxt5.ef ~ .focus_line i:after {
+        height: 100%;
+        transition: 0.4s;
+    }
+
+
+    .ef:focus ~ label,
+    .cp_iptxt5.ef ~ label {
+        font-size: 12px;
+        top: -18px;
+        left: 0;
+        transition: 0.3s;
+        color: #da3c41;
+    }
+
+/*備考*/
+.cp_iptxt6 {
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%
+}
+
+    .cp_iptxt6 input[type='text'] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: 1px;
+        padding-left: 1em;
+    }
+
+        .cp_iptxt6 input[type='text']:focus {
+            outline: none;
+        }
+
+    .ef:focus ~ .focus_line:before,
+    .ef:focus ~ .focus_line:after,
+    .cp_iptxt6.ef ~ .focus_line:before,
+    .cp_iptxt6.ef ~ .focus_line:after {
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    .ef:focus ~ .focus_line i:before,
+    .ef:focus ~ .focus_line i:after,
+    .cp_iptxt6.ef ~ .focus_line i:before,
+    .cp_iptxt6.ef ~ .focus_line i:after {
+        height: 100%;
+        transition: 0.4s;
+    }
+
+    .ef:focus ~ label,
+    .cp_iptxt6.ef ~ label {
+        font-size: 12px;
+        top: -18px;
+        left: 0;
+        transition: 0.3s;
+        color: #da3c41;
+    }
+
+    /*備考*/
+    .select_color {
+        position: relative;
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 5%
+    }
+        .select_color label {
+            color:gray;
+        }
+    #dialog .ok {
+        position: relative;
+        color: steelblue;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: .3s ease;
+        border: 1px solid steelblue;
+
+        font-weight: bold;
+        font-size: 20px;
+        display: inline-block;
+        text-decoration: none; /*アンダーバーを消す*/
+    }
+
+        #dialog .ok:hover {
+            background: steelblue;
+            color: white;
+            transition: .3s ease;
+        }

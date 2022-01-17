@@ -1,0 +1,198 @@
+﻿{% extends "base.html" %}
+　　{% block title %}
+    質問選択画面
+    {% endblock %}
+
+{% load static %}
+
+     {% block link %}
+     <link rel="stylesheet" href="{%static 'css/mode/oneAnsSet.css' %}">
+     <script type="text/javascript" src="{%static 'js/mode/oneAnsSet.js' %}"></script>
+     {% endblock %}
+
+{% block content %}
+<p class="title">
+    <span class="a">1</span>
+    <span class="b">問</span>
+    <span class="c">1</span>
+    <span class="d">答</span>
+    <span class="e">モ</span>
+    <span class="f">ー</span>
+    <span class="g">ド</span>
+</p>
+
+<p class="detail">「1問1答」モードでは対策したい1問に焦点を絞り練習できます。<br />
+    「対面」「本番」モードでわかった自分の弱点を繰り替えし練習してみましょう！</p>
+
+<h3 class="p1">練習したい質問を選択してください。　※1問のみ</h3>
+
+<button class="btn1" name="question" onclick="getRadioValue('question');">O K</button>
+
+    <div class="quest">
+        <form action="{% url 'oneAnsStart' %} " method="post" name="form1" id="quest">
+            <!-- csrf_token・・・セキュリティ対策(必須)-->
+            {% csrf_token %}
+            <details open>
+                <summary>自己紹介について</summary>
+                <p class="p2">
+                    <input type="radio" name="question" value="自己PRをしてください。" checked>自己PRをしてください。<br />
+                    <input type="radio" name="question" value="自己紹介をしてください。">自己紹介をしてください。<br />
+                    <input type="radio" name="question" value="自分を一言で表してください。">自分を一言で表してください。<br />
+                    <input type="radio" name="question" value="あなたはどのような性格ですか？">あなたはどのような性格ですか？<br />
+                    <input type="radio" name="question" value="あなた自身をもので例えると何か、理由を合わせて教えてください。">あなた自身をもので例えると何か、理由を合わせて教えてください。<br />
+                </p>
+                <p class="p3">
+                    <input type="radio" name="question" value="あなたの強みを仕事でどのように活かしていきたいですか？">あなたの強みを仕事でどのように活かしていきたいですか？<br />
+                    <input type="radio" name="question" value="友達や周囲の人からどのような人だと言われますか？">友達や周囲の人からどのような人だと言われますか？<br />
+                    <input type="radio" name="question" value="休日はどのように過ごしていますか？">休日はどのように過ごしていますか？<br />
+                    <input type="radio" name="question" value="趣味はありますか？">趣味はありますか？<br />
+                    <p>　　　</p>
+                </p>
+            </details>
+
+            <p>　　　</p>
+
+            <details>
+                <summary>志望動機について</summary>
+                <p class="p2">
+                    <input type="radio" name="question" value="志望動機を教えてください。">志望動機を教えてください。<br />
+                    <input type="radio" name="question" value="弊社で成し遂げたいことはありますか？">弊社で成し遂げたいことはありますか？<br />
+                    <input type="radio" name="question" value="この業界を志望している理由はありますか？">この業界を志望している理由はありますか？<br />
+                </p>
+                <p class="p3">
+                    <input type="radio" name="question" value="弊社のイベントなどに参加されたことはありますか？">弊社のイベントなどに参加されたことはありますか？<br />
+                    <input type="radio" name="question" value="弊社の名前を最初に知ったきっかけは何ですか？">弊社の名前を最初に知ったきっかけは何ですか？<br />
+                    <p>　　　</p>
+                </p>
+            </details>
+
+            <p>　　　</p>
+
+            <details>
+                <summary>経験談について</summary>
+                <p class="p2">
+                    <input type="radio" name="question" value="学生時代に頑張ったことは？">学生時代に頑張ったことは？<br />
+                    <input type="radio" name="question" value="学生時代に打ち込んだことは何ですか？">学生時代に打ち込んだことは何ですか？<br />
+                    <input type="radio" name="question" value="部活動やサークル活動は行っていましたか？">部活動やサークル活動は行っていましたか？<br />
+                    <input type="radio" name="question" value="卒業論文のテーマについて教えてください。">卒業論文のテーマについて教えてください。<br />
+                    <input type="radio" name="question" value="アルバイトは何をしていましたか？">アルバイトは何をしていましたか？<br />
+                    <input type="radio" name="question" value="これまでに最も苦労した経験について、その解決方法も含めて教えてください。">これまでに最も苦労した経験について、その解決方法も含めて教えてください。<br />
+                </p>
+                <p class="p3">
+                    <input type="radio" name="question" value="ボランティア活動などの経験はありますか？">ボランティア活動などの経験はありますか？<br />
+                    <input type="radio" name="question" value="課題を乗り越えた経験について教えてください。">課題を乗り越えた経験について教えてください。<br />
+                    <input type="radio" name="question" value="これまでの人生で、何かに向かって努力した経験をきかせてください。">これまでの人生で、何かに向かって努力した経験をきかせてください。<br />
+                    <input type="radio" name="question" value="努力を継続するためのモチベーションの源泉は何ですか？">努力を継続するためのモチベーションの源泉は何ですか？<br />
+                    <input type="radio" name="question" value="チームで苦労をした経験はありますか？">チームで苦労をした経験はありますか？<br />
+                    <input type="radio" name="question" value="あなたの失敗談を教えてください。">あなたの失敗談を教えてください。
+                </p>
+            </details>
+
+            <p>　　　</p>
+
+            <details>
+                <summary>自己評価について</summary>
+                <p class="p2">
+                    <input type="radio" name="question" value="長所と短所を教えてください。">長所と短所を教えてください。<br />
+                    <input type="radio" name="question" value="短所を克服するために努力していることはありますか？">短所を克服するために努力していることはありますか？<br />
+                    <input type="radio" name="question" value="あなたの長所は企業でどのように役立つと思いますか？">あなたの長所は企業でどのように役立つと思いますか？<br />
+                    <input type="radio" name="question" value="あなたの長所を3つ挙げてください。">あなたの長所を3つ挙げてください。<br />
+                </p>
+                <p class="p3">
+                    <input type="radio" name="question" value="あなたの短所を3つ挙げてください。">あなたの短所を3つ挙げてください。<br />
+                    <input type="radio" name="question" value="現在のあなたの課題は何だと思いますか？">現在のあなたの課題は何だと思いますか？<br />
+                    <input type="radio" name="question" value="他人の短所とあなたの短所がぶつかった時はどうしますか？">他人の短所とあなたの短所がぶつかった時はどうしますか？<br />
+                    <p>　　　</p>
+                </p>
+            </details>
+
+            <p>　　　</p>
+
+            <details>
+                <summary>目標・キャリアプランについて</summary>
+                <p class="p2">
+                    <input type="radio" name="question" value="入社してやりたいことはありますか？">入社してやりたいことはありますか？<br />
+                    <input type="radio" name="question" value="入社したら入りたい部署はありますか？">入社したら入りたい部署はありますか？<br />
+                    <input type="radio" name="question" value="入社後のキャリアプランを教えてください。">入社後のキャリアプランを教えてください。<br />
+                    <input type="radio" name="question" value="弊社の業務の中で気になっている業務や事業部はありますか？">弊社の業務の中で気になっている業務や事業部はありますか？<br />
+                    <input type="radio" name="question" value="10年後に達成していたい目標はありますか？">10年後に達成していたい目標はありますか？<br />
+                </p>
+                <p class="p3">
+                    <input type="radio" name="question" value="10年後はどうなっていたいですか？">10年後はどうなっていたいですか？<br />
+                    <input type="radio" name="question" value="将来の夢を教えてください。">将来の夢を教えてください。<br />
+                    <input type="radio" name="question" value="これから実現したい夢は何ですか？">これから実現したい夢は何ですか？<br />
+                    <input type="radio" name="question" value="どのような社会人になりたいですか？">どのような社会人になりたいですか？<br />
+                    <p>　　　</p>
+                </p>
+            </details>
+
+            <p>　　　</p>
+
+            <details>
+                <summary>勤務条件について</summary>
+                <p class="p2">
+                    <input type="radio" name="question" value="転勤は可能ですか？">転勤は可能ですか？<br />
+                    <input type="radio" name="question" value="会社までの通勤時間はどのくらいですか？">会社までの通勤時間はどのくらいですか？<br />
+                    <input type="radio" name="question" value="現在ご実家にお住まいですか？">現在ご実家にお住まいですか？<br />
+                    <input type="radio" name="question" value="海外で働きたいなどの希望はありますか？">海外で働きたいなどの希望はありますか？<br />
+                </p>
+                <p class="p3">
+                    <input type="radio" name="question" value="住まいや暮らしが変わることに苦手意識はありますか？">住まいや暮らしが変わることに苦手意識はありますか？<br />
+                    <input type="radio" name="question" value="新しい人や仕事にすぐに打ち解けることに苦手意識はありますか？">新しい人や仕事にすぐに打ち解けることに苦手意識はありますか？<br />
+                    <input type="radio" name="question" value="休日出勤の可能性もありますが、大丈夫ですか？">休日出勤の可能性もありますが、大丈夫ですか？<br />
+                    <p>　　　</p>
+                </p>
+            </details>
+
+            <p>　　　</p>
+
+            <details>
+                <summary>答えにくい・困りやすい質問</summary>
+                <p class="p2">
+                    <input type="radio" name="question" value="弊社が第一志望ですか？">弊社が第一志望ですか？<br />
+                    <input type="radio" name="question" value="弊社と同じ業界の他社との違いは何だと思いますか？">弊社と同じ業界の他社との違いは何だと思いますか？<br />
+                    <input type="radio" name="question" value="この業界の中でも弊社のサービスについての率直な感想を教えてください。">この業界の中でも弊社のサービスについての率直な感想を教えてください。<br />
+                </p>
+                <p class="p3">
+                    <input type="radio" name="question" value="平行してほかの企業はどのような業界を受けていますか？">平行してほかの企業はどのような業界を受けていますか？<br />
+                    <input type="radio" name="question" value="他に何社ほど受けておられますか？">他に何社ほど受けておられますか？<br />
+                    <input type="radio" name="question" value="弊社で内定が出た場合、就活は終了しますか？">弊社で内定が出た場合、就活は終了しますか？
+                </p>
+            </details>
+
+            <p>　　　</p>
+
+            <details>
+                <summary>その他</summary>
+                <p class="p2">
+                    <input type="radio" name="question" value="最近気になっているニュースはありますか？">最近気になっているニュースはありますか？<br />
+                    <input type="radio" name="question" value="あなたにとって働くとは何ですか？">あなたにとって働くとは何ですか？<br />
+                    <input type="radio" name="question" value="この業界ではどのようなスキルが重要だとお考えですか？">この業界ではどのようなスキルが重要だとお考えですか？<br />
+                    <input type="radio" name="question" value="目標を達成するうえで一番大切なことは何だとお考えですか？">目標を達成するうえで一番大切なことは何だとお考えですか？<br />
+                    <input type="radio" name="question" value="ストレスがたまった時はどのようにリフレッシュしますか？">ストレスがたまった時はどのようにリフレッシュしますか？<br />
+                    <input type="radio" name="question" value="つらいことや悲しいことは自分の力で乗り越えますか、他社に助けを求めますか？">つらいことや悲しいことは自分の力で乗り越えますか、他社に助けを求めますか？<br />
+                    <input type="radio" name="question" value="あなたの尊敬する人物は誰ですか？">あなたの尊敬する人物は誰ですか？<br />
+                </p>
+                <p class="p3">
+                    <input type="radio" name="question" value="好きな言葉や座右の銘はありますか？">好きな言葉や座右の銘はありますか？<br />
+                    <input type="radio" name="question" value="尊敬する人と比べて、現時点で自分に足りないものは何だと思いますか？">尊敬する人と比べて、現時点で自分に足りないものは何だと思いますか？<br />
+                    <input type="radio" name="question" value="「周囲から尊敬される人材」とはどのような人だと思いますか？">「周囲から尊敬される人材」とはどのような人だと思いますか？<br />
+                    <input type="radio" name="question" value="尊敬している作家や偉人などはいますか？">尊敬している作家や偉人などはいますか？<br />
+                    <input type="radio" name="question" value="一緒に働くにあたって、どんな仲間や先輩に魅力を感じますか？">一緒に働くにあたって、どんな仲間や先輩に魅力を感じますか？<br />
+                    <input type="radio" name="question" value="最後に何か質問はありますか？">最後に何か質問はありますか？<br />
+                    <p>　　　</p>
+                </p>
+            </details>
+        </form>
+    </div>
+
+    <div id="console_log">
+
+    </div>
+    
+    <div class="space">
+        <!-- 確定ボタンの下にスペースを開ける※全角でスペース入れてます※-->
+        　　　
+    </div>
+
+    {% endblock %}

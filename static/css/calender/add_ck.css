@@ -1,0 +1,56 @@
+﻿
+.check {
+    text-align: center;
+    margin-top: 10%;
+}
+
+
+#input_data{
+    position:absolute;
+    margin-top:-60%;
+    margin-left:20%;
+    text-align:left;
+    font-size:20px;
+}
+
+
+
+#dialog {
+    position:relative;
+    border: 1px solid;
+    height: 600px;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 8%;
+    background-color: white;
+}
+
+    #dialog p {
+        text-align: center;
+        margin-top: 65%;
+    }
+
+    #dialog .ok {
+        position: absolute;
+        color: steelblue;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: .3s ease;
+        border: 1px solid steelblue;
+        padding: 5px 15px;
+        font-weight: bold;
+        font-size: 20px;
+        display: inline-block;
+        margin-left: 43%;
+        margin-top: 10%;
+        text-decoration: none; /*アンダーバーを消す*/
+    }
+
+        #dialog .ok:hover {
+            background: steelblue;
+            color: white;
+            transition: .3s ease;
+        }
+
+    

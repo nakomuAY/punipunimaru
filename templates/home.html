@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+　　{% block title %}
+    ホーム画面
+    {% endblock %}
+
+{% load static %}
+
+     {% block link %}
+     <link rel="stylesheet" href="{%static 'css/home.css' %}">
+     {% endblock %}
+
+{% block content %}
+    <!--スライドショー-->
+    <div class="slider">
+        <ul class="slideul">
+            {% for data,nisuu in post_data.items %}
+            <li class="slideli"><h1>{{ data }}の面接まで残り<span id="nisuu">{{nisuu}}日</span></h1></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!--履歴・面接練習・カレンダーのアイコン表示-->
+    <div>
+        <ul class="pricelist-contents">
+            <a href="rireki.html">
+                <li>
+                    <span>
+                        <img src="{%static 'images/icon_review.png' %}" title="履歴" width="120" height="120">
+                        <p>「対面」「本番」モードの練習結果振り返りができます(「1問1答」を除く)。</p>
+                    </span>
+                </li>
+            </a>
+            <a href="{% url 'mode' %}">
+                <li>
+                    <span>
+                        <img src="{% static 'images/icon_practice.png' %}" title="面接練習" width="120" height="120">
+                        <p>「1問1答」「対面」「本番」の全3種からモード選択を行い、面接練習を行えます。</p>
+                    </span>
+                </li>
+            </a>
+            <a href="{% url 'calender' %}" >
+                <li>
+                    <span>
+                        <img src="{%static 'images/icon_calender.png' %}"  title="カレンダー" width="120" height="120">
+                        <p>面接予定日を登録でき、当日までの残り日数がホーム画面に表示されます。</p>
+                    </span>
+                </li>
+            </a>
+        </ul>
+    </div>
+
+{% endblock %}

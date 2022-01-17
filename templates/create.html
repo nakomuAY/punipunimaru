@@ -1,0 +1,50 @@
+{% load static %}
+<title>Signup</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link rel="stylesheet" href="{%static 'css/bootstrap/bootstrap.min.css' %}">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="{%static 'js/bootstrap/bootstrap.js' %}"></script>
+<body style="background-color:#F8F8FF"> 
+    <header style="height:100px ;background-color:black"></header>
+    <div space style="height:250px"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-7 col-sm-9">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Sign up</h3>
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger alert-text" role="alert">
+                                {% for error in form.non_field_errors %}
+                                    <p{% if forloop.last %} class="mb-0"{% endif %}>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        <form method="POST" action="{% url 'create_account' %}" class="auth-form" novalidate>
+                            {% csrf_token %}
+                            {% for field in form %}
+                            <div>
+                                {{ field.label_tag }}
+                                {{ field }}
+                                {% if field.errors %}
+                                    <div class="login-error-text">
+                                        {{ field.errors }}
+                                    </div>
+                                {% else %}
+                                    <div class="login-text-div"></div>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                            <button type="submit" class="form-control btn-info auth-button">Signup</button>
+                        </form>
+                    </div>
+                    <div class="card-footer text-muted text-center">
+                        Already have an account? <a href="{% url 'login' %}">Log in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

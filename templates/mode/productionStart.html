@@ -1,0 +1,26 @@
+﻿{% extends "base.html" %}
+　　{% block title %}
+    面接画面
+    {% endblock %}
+{% block content %}
+
+{% load static %}
+
+     {% block link %}
+     <link rel="stylesheet" href="{%static 'css/mode/productionStart.css' %}">
+     {% endblock %}
+     
+     <p class="title">
+        <span class="a">本</span>
+        <span class="b">番</span>
+        <span class="c">モ</span>
+        <span class="d">ー</span>
+        <span class="e">ド</span>
+    </p>
+    
+    <p class="detail">「本番」モードでは、実際の面接練習に基づいた練習ができます。<br />
+        「対面」に対し、面接官キャラクター、人数、質問数は全てランダムで選択されます。</p>
+
+     <a href= "{% url 'productionAct' %}" id="start-btn">面接を開始する</a>
+
+{% endblock %}

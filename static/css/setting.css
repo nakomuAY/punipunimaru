@@ -1,0 +1,275 @@
+﻿.back1 {
+    background-color: black;
+    height: 85px;
+}
+
+
+.logo {
+    position: absolute;
+    left: 10%;
+    top: 1.5%;
+}
+
+.username {
+    position: absolute;
+    border-radius: 5px;
+    margin:0.7%;
+    color: white;
+    right: 21%;
+    top: 2.5%;
+}
+
+
+.logout {
+    position:absolute;
+    border-radius: 5px;
+    margin: 0.7%;
+    text-align: center;
+    color: white;
+    text-decoration: none; /*アンダーバーを消す*/
+    right: 12%;
+    top: 2.5%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.setting_table {
+    border-collapse: separate;
+    border-spacing: 0px 15px;
+}
+
+.se-under-button {
+    text-align: center;
+    position: absolute;
+    margin-left: 33%;
+}
+
+.button_table {
+    margin-right: 10px;
+}
+
+
+/*設定ボタン*/
+.modal-open {
+    position: absolute;
+    border-radius: 5px;
+    margin: 0.7%;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    right: 5%;
+    top: 2.5%;
+}
+
+    .modal-open a {
+        display: inline-block;
+        padding: 5px;
+        text-decoration: none;
+        color: #fff;
+    }
+
+.modal {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+    .modal:not(:target) {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s, visibility 0.5s;
+    }
+
+    .modal:target {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.5s, visibility 0.5s;
+    }
+
+    .modal .overlay {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: #000;
+        opacity: 0.7;
+        top: 0;
+        left: 0;
+    }
+/*-モーダルの大きさ・位置-*/
+.modal-wrapper {
+    width: 100%;
+    width: 450px;
+    height: 100%;
+    height: 650px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-contents {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.modal-content {
+    margin: 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    text-decoration: none;
+}
+
+/* === ボタンを表示するエリア ============================== */
+.sample1Area {
+    width: 50px; /* ボタンの横幅       */
+    margin-left: 85px;
+}
+
+    /* === チェックボックス ==================================== */
+    .sample1Area input[type="checkbox"] {
+        display: none; /* チェックボックス非表示 */
+    }
+
+    /* === チェックボックスのラベル（標準） ==================== */
+.sample1Area label {
+    display: block; /* ボックス要素に変更 */
+    box-sizing: border-box; /* 枠線を含んだサイズ */
+    text-align: left; /* 文字位置は中央     */
+    border: 2px solid #6c9bd9; /* 枠線               */
+    border-radius: 3px; /* 角丸               */
+    line-height: 1; /* 1行の高さ          */
+    height: 25px; /* ボタンの高さ       */
+}
+
+    /* === 移動BOX（標準） ===================================== */
+    .sample1Area #sample1box {
+        display: inline-block;
+        height: 21px; /* ボタンの高さ       */
+        width: 50%; /* ボタンの高さ       */
+        background: #ddd; /* 背景色             */
+        transition: .3s; /* ゆっくり変化       */
+    }
+
+    /* === ON側のチェックボックスの移動BOX（ONのとき） ========= */
+    .sample1Area #sample1check:checked + label #sample1box {
+        transform: translateX(100%); /* BOXを右に移動      */
+        background: #6c9bd9; /* 背景色             */
+    }
+
+/* === ボタンを表示するエリア ============================== */
+.sample2Area {
+    width: 50px; /* ボタンの横幅       */
+    margin-left: 85px;
+}
+
+    /* === チェックボックス ==================================== */
+    .sample2Area input[type="checkbox"] {
+        display: none; /* チェックボックス非表示 */
+    }
+
+    /* === チェックボックスのラベル（標準） ==================== */
+    .sample2Area label {
+        display: block; /* ボックス要素に変更 */
+        box-sizing: border-box; /* 枠線を含んだサイズ */
+        text-align: left; /* 文字位置は中央     */
+        border: 2px solid #6c9bd9; /* 枠線               */
+        border-radius: 3px; /* 角丸               */
+        line-height: 1; /* 1行の高さ          */
+        height: 25px; /* ボタンの高さ       */
+    }
+
+    /* === 移動BOX（標準） ===================================== */
+    .sample2Area #sample2box {
+        display: inline-block;
+        height: 21px; /* ボタンの高さ       */
+        width: 50%; /* ボタンの高さ       */
+        background: #ddd; /* 背景色             */
+        transition: .3s; /* ゆっくり変化       */
+    }
+
+    /* === ON側のチェックボックスの移動BOX（ONのとき） ========= */
+    .sample2Area #sample2check:checked + label #sample2box {
+        transform: translateX(100%); /* BOXを右に移動      */
+        background: #6c9bd9; /* 背景色             */
+    }
+
+
+/* === ボタンを表示するエリア ============================== */
+.sample3Area {
+    width: 50px; /* ボタンの横幅       */
+    margin-left: 85px;
+}
+
+    /* === チェックボックス ==================================== */
+    .sample3Area input[type="checkbox"] {
+        display: none; /* チェックボックス非表示 */
+    }
+
+    /* === チェックボックスのラベル（標準） ==================== */
+    .sample3Area label {
+        display: block; /* ボックス要素に変更 */
+        box-sizing: border-box; /* 枠線を含んだサイズ */
+        text-align: left; /* 文字位置は中央     */
+        border: 2px solid #6c9bd9; /* 枠線               */
+        border-radius: 3px; /* 角丸               */
+        line-height: 1; /* 1行の高さ          */
+        height: 25px; /* ボタンの高さ       */
+    }
+
+    /* === 移動BOX（標準） ===================================== */
+    .sample3Area #sample3box {
+        display: inline-block;
+        height: 21px; /* ボタンの高さ       */
+        width: 50%; /* ボタンの高さ       */
+        background: #ddd; /* 背景色             */
+        transition: .3s; /* ゆっくり変化       */
+    }
+
+    /* === ON側のチェックボックスの移動BOX（ONのとき） ========= */
+    .sample3Area #sample3check:checked + label #sample3box {
+        transform: translateX(100%); /* BOXを右に移動      */
+        background: #6c9bd9; /* 背景色             */
+    }
+
+.btn {
+    text-align: center;
+}
+
+
+/*
+    .btn1 {
+    text-align: center;
+    position: absolute;
+    margin-left: 33%;
+    margin: 10px;
+}
+
+.btn2 {
+    text-align: center;
+    position: absolute;
+    margin-left: 33%;
+    margin: 10px;
+}
+
+.btn3 {
+    text-align: center;
+    position: absolute;
+    margin-left: 33%;
+    margin: 10px;
+}
+*/

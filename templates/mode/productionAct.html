@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>面接画面</title>
+    <link rel="shortcut icon" href="{%static 'images/favicon.png' %}">
+</head>
+<body>
+  
+  <div id="css"></div>
+
+  <!-- 録音時間を表示する -->
+  <p id="timer">00:00:00</p>
+  <div id=all>
+  <!--面接官アイコン-->
+    <img src="" title="面接官アイコン1" id="aicon1" width="560px" height="420px">
+    <img src="" title="面接官アイコン2" id="aicon2" width="560px" height="420px">
+    <img src="" title="面接官アイコン3" id="aicon3" width="560px" height="420px">
+
+    <video id ="myVideo" class="myvideo" value="" name="myVideo" autoplay width="320px" height="240px"></video>
+
+    <dialog id="dialog">
+      　<p>結果は保存されません。<br>本当に中断しますか。</p>
+        <button class="start" onclick="OKDialog()">OK</button>
+        <button class="cancel" onclick="closeDialog()">キャンセル</button>
+    </dialog>
+   
+  </div>
+  <div id="owari">
+    <p>面接は終了しました</p>
+    <form action="{% url 'productionResult' %} " name="p_resultform" method="POST">
+       <!-- csrf_token・・・セキュリティ対策(必須)-->
+       {% csrf_token %}
+      <input type="button" id="Kekka" class="nextBTN" onclick="resultView()" value="結果画面" />
+      <!-- 面接官・質問内容・文字起こし・時間を次の画面へ送る-->
+      <input type="hidden" id="resultChara" name="resultChara" >                                <!--  面接官 -->
+      <input type="hidden" id="resultTime" name="resultTime"  />                                <!--   時間  -->
+      <input type="hidden" id="resultQuestion" name="resultQuestion" />                         <!-- 質問内容-->
+      <input type="hidden" id="resultMojiokoshi" name="resultMojiokoshi" />                     <!-- 文字起こし-->
+    </form>
+  </div>
+  <a href="#" id="Tyudan" class="stopBTN" onclick="stopVideo()">中断</a>
+  <div id = "questionfield"></div>
+  <div id = "test"></div>
+  <script type="text/javascript" src="{%static 'js/mode/productionAct.js' %}"></script>
+
+</body>
+</html>

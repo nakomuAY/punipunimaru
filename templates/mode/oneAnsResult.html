@@ -1,0 +1,46 @@
+﻿{% extends "base.html" %}
+　　{% block title %}
+    録音結果画面
+    {% endblock %}
+{% block content %}
+
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{%static 'css/mode/oneAnsResult.css' %}">
+{% endblock %}
+
+<p class="title">
+  <span class="a">1</span>
+  <span class="b">問</span>
+  <span class="c">1</span>
+  <span class="d">答</span>
+  <span class="e">モ</span>
+  <span class="f">ー</span>
+  <span class="g">ド</span>
+</p>
+
+<p class="detail">録音した内容を文字に起こした結果です。<br />
+  自身で見直し、内容の重複、言葉の反復などが無いかを確認をしましょう！</p>
+
+   <h3 class="p1">質問内容 : {{ question }}</h3>
+   <div id="time-text">回答時間：{{ resultTime }}</div>
+   <div id="mojiokoshi">
+    <div id="moji-div">{{resultText}}</div>
+   </div>
+    <!-- script type="text/javascript" src="{%static 'js/mode/test.js' %}"></script -->
+    
+    <form action="{% url 'oneAnsStart' %}" method="post">
+      {% csrf_token %}
+      <input type="submit" id="result_btn1" class="result_btn1" value="もう１度練習"></input>
+      <input type="hidden" name = "question" value="{{ question }}"></input>
+    </form>
+    <a href="{% url 'oneAnsSet' %}" ><button id="result_btn2" class="result_btn2">設定を変更して練習</button></a>
+    <a href="{% url 'home' %}" ><button id="result_btn3" class="result_btn3">ホームに戻る</button></a>
+
+    <div class="space">
+      <!-- 確定ボタンの下にスペースを開ける※全角でスペース入れてます※-->
+      　　　
+  </div>
+
+{% endblock %}

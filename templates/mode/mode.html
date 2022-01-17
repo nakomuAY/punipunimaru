@@ -1,0 +1,67 @@
+﻿{% extends "base.html" %}
+　　{% block title %}
+    モード選択画面
+    {% endblock %}
+{% block content %}
+
+{% load static %}
+
+     {% block link %}
+     <link rel="stylesheet" href="{%static 'css/mode/mode.css' %}">
+     {% endblock %}
+
+     <p class="title">
+        <span class="a">面</span>
+        <span class="b">接</span>
+        <span class="c">練</span>
+        <span class="d">習</span>
+        <span class="e">へ</span>
+        <span class="f">よ</span>
+        <span class="g">う</span>
+        <span class="h">こ</span>
+        <span class="i">そ</span>
+    </p>
+
+    <p class="detail">「1問1答」「対面」「本番」3モードから選択できます。<br />
+    自分に合ったモードを探し、本番に向けて頑張りましょう！</p>
+
+    <!--練習モード・本番モードボタンの表示 -->
+    <div class="buttons">
+        <ul class="pricelist-contents">
+
+            <a href="{% url 'practiceMode' %}" class="blob-btn">
+                <li>
+                    <p class="p1">練習モード</p>
+                    <p class="p2">「練習」では「1問1答」「対面」の2つよりモード選択できます。「1問1答」では1つの質問に対し重点的に対策することができます。
+                        「対面」「本番」では、実際の面接形式を意識し練習できます。
+                        </p>
+                </li>
+                    <span class="blob-btn__inner">
+                        <span class="blob-btn__blobs">
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        </span>
+                    </span>
+            </a>
+
+            <a href="{% url 'productionStart'%}" class="blob-btn">
+                <li>
+                    <p class="p1">本番モード</p>
+                    <p class="p2">「対面」は面接官の人数、質問数を選択でき、「本番」はランダムに選択されます。</p>
+                </li>
+                <span class="blob-btn__inner">
+                    <span class="blob-btn__blobs">
+                    <span class="blob-btn__blob"></span>
+                    <span class="blob-btn__blob"></span>
+                    <span class="blob-btn__blob"></span>
+                    <span class="blob-btn__blob"></span>
+                    </span>
+                </span>
+            </a>
+        </ul>
+    </div>
+
+{% endblock %}
+

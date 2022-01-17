@@ -1,0 +1,140 @@
+﻿#dialog {
+    border: 1px solid;
+    height: 600px;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 8%;
+    background-color: white;
+}
+
+h1{
+    margin-top:10%;
+    text-align:center;
+}
+#input_data {
+    margin-left:20%;
+    text-align: left;
+    margin-top: 10%;
+    font-size:20px;
+}
+
+
+    #dialog #edit {
+        position: relative;
+        color: steelblue;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: .3s ease;
+        border: 1px solid steelblue;
+        padding: 5px 15px;
+        font-weight: bold;
+        font-size: 20px;
+        display: inline-block;
+        margin-left: 25%;
+        margin-top: 10%;
+        text-decoration: none; /*アンダーバーを消す*/
+    }
+
+        #dialog #edit:hover {
+            background: steelblue;
+            color: white;
+            transition: .3s ease;
+        }
+
+    #dialog #delete {
+        position: relative;
+        color: steelblue;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: .3s ease;
+        border: 1px solid steelblue;
+        padding: 5px 15px;
+        font-weight: bold;
+        font-size: 20px;
+        display: inline-block;
+        margin-left: 20%;
+        margin-top: 10%;
+        text-decoration: none; /*アンダーバーを消す*/
+    }
+
+        #dialog #delete:hover {
+            background: steelblue;
+            color: white;
+            transition: .3s ease;
+        }
+
+#deleteCheck {
+    margin-left:35%;
+    margin-top:-30%;
+    width:400px;
+    height:150px;
+}
+
+    #deleteCheck p{
+        text-align:center;
+        font-size:20px;
+        margin-top:10%;
+    }
+
+    #deleteCheck button {
+        position: relative;
+        color: steelblue;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: .3s ease;
+        border: 1px solid steelblue;
+        padding: 5px 15px;
+        font-weight: bold;
+        font-size: 15px;
+        display: inline-block;
+        margin-left: 15%;
+        margin-top: 5%;
+        width:110px;
+        height:35px;
+        text-decoration: none; /*アンダーバーを消す*/
+    }
+
+        #deleteCheck button:hover {
+            background: steelblue;
+            color: white;
+            transition: .3s ease;
+        }
+
+
+#editDone {
+    margin-left:35%;
+    margin-top:-30%;
+    width:400px;
+    height:150px;
+}
+        
+        #editDone  p{
+            text-align:center;
+            font-size:20px;
+            margin-top:10%;
+        }
+    
+        #editDone  button {
+            position: relative;
+            color: steelblue;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: .3s ease;
+            border: 1px solid steelblue;
+            padding: 5px 15px;
+            font-weight: bold;
+            font-size: 15px;
+            display: inline-block;
+            margin-left: 34%;
+            margin-top: 5%;
+            width:110px;
+            height:35px;
+            text-decoration: none; /*アンダーバーを消す*/
+        }
+
+            #editDone  button:hover {
+                background: steelblue;
+                color: white;
+                transition: .3s ease;
+            }

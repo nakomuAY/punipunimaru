@@ -1,0 +1,48 @@
+body {
+    background-color: #F8F8FF;
+    margin: 0;
+}
+
+.back1 {
+    background-color: black;
+    height: 85px;
+}
+
+
+.logo {
+    position: absolute;
+    left: 10%;
+    top: 1%;
+}
+
+.settei {
+    position: absolute;
+    border-radius: 5px;
+    margin: 0.7%;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    right: 5%;
+    top: 2.5%;
+}
+
+.username {
+    position: absolute;
+    border-radius: 5px;
+    margin:0.7%;
+    color: white;
+    right: 21%;
+    top: 2.5%;
+}
+
+.logout {
+    position:absolute;
+    border-radius: 5px;
+    margin: 0.7%;
+    text-align: center;
+    color: white;
+    text-decoration: none; /*アンダーバーを消す*/
+    right: 12%;
+    top: 2.5%;
+}
+
