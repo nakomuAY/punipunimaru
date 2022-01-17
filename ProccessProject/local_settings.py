@@ -1,10 +1,13 @@
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+# mysqlを指定
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'user_table'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':  'user_table',
+        'USER': 'root',
+        'PASSWORD': 'kcsf',
     }
 }
 
